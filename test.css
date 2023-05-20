@@ -1,0 +1,53 @@
+.content {
+    display: flex;
+    border: 1px solid black;
+    background-color: lightblue;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.col1{
+    padding: 10px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    flex: 1 1 70%;
+}
+.col2{
+    padding: 10px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    flex: 1 1 30%;
+}
+
+.columns{
+    display: flex;
+    border: 1px solid black;
+    background-color: palevioletred;
+    width: 400px;
+    padding: 10px;
+
+}
+
+.even   {
+    padding: 5px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    flex-basis: 100%;
+
+
+} 
+.grids {
+    display: flex;
+    border: 1px solid black;
+    background-color: lightblue;
+    width: 20%; 
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.grid   {
+    padding: 10px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    flex: 1 0 10em;
+    
+
+} 
