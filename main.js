@@ -24,11 +24,14 @@ function multiply  (a, b) {
   };
 
 function divide  (a, b) {
-    // console.log(a + ' '+ b)
-    if (parseFloat(b)===0){
-        updateDisplay('That is not gonnna work!')
+     if (parseFloat(b)===0){
+        window.alert('This is not going to work!! You cannot divide by 0')
+        return 'Error!!'
+        
     }
-    return (parseFloat(a) / parseFloat(b))%1===0? parseFloat(a) / parseFloat(b): (parseFloat(a) / parseFloat(b)).toFixed(2);
+    else if(parseFloat(b)!==0){ 
+    return (parseFloat(a) / parseFloat(b))%1===0? parseFloat(a) / parseFloat(b): (parseFloat(a) / parseFloat(b)).toFixed(2);}
+
   };
    
 function operator(num1, num2, opt){
@@ -91,9 +94,7 @@ function loader (){
     }
      
 }
-optButton.forEach((button)=>{
-button.addEventListener('click', ()=>{saveNumber(button.textContent)})
-})
+
 
 function saveNumber(value){
     if(number1===''  && operand ===''){
@@ -124,22 +125,29 @@ function saveNumber(value){
     
     else {console.log('operand issue')}
     updateShortDis()
+    if(!display.textContent.toString().includes('.')){
+        document.querySelector('.dot').classList.remove('disable')}
+        else{document.querySelector('.dot').classList.add('disable')}
 }
 
-numButton.forEach((button)=>{
-button.addEventListener('click', ()=>{  runner(button.textContent)})})
- 
+
 function runner (num){
+   
     if (operand!=='' && number1===''){
+        
         updateDisplay(num)
     }
     else if ((number1 ==='' && operand ==='')|| (number1 ===undefined && operand ===undefined)){
         let data = num
         updateDisplay(data)
     }
-    else if(number1!=='' && operand !=='' && number2 ===''){
+    else if(number1!=='' && operand !=='' && number2 ==='' && display.textContent!=='.'){
         display.textContent = ''
         number2 = num
+        updateDisplay(number2)     
+    }
+    else if(number1!=='' && operand !=='' && number2 ==='' && display.textContent==='.'){
+         number2 = num
         updateDisplay(number2)     
     }
     else if(number1!=='' && operand !=='' && number2 !=='')
@@ -187,11 +195,14 @@ function dotOpt () {
 }
 cut.addEventListener('click', backspace)
 dot.addEventListener('click',dotOpt)
-
+numButton.forEach((button)=>{
+    button.addEventListener('click', ()=>{  runner(button.textContent)})})
+optButton.forEach((button)=>{
+    button.addEventListener('click', ()=>{saveNumber(button.textContent)})
+    })     
 
 window.addEventListener('keydown',  (e)=>{
-    console.log(e.key)
-    if (e.key==='Enter'){
+     if (e.key==='Enter'){
         loader()
     }
     else  if( parseInt(e.key) >=0 && parseInt(e.key) <=9){
