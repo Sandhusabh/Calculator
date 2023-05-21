@@ -99,7 +99,7 @@ function saveNumber(){
     operand = this.textContent
     display.textContent=''
     }
-    else if (number1!=='' && operand !==''){
+    else if (number1!=='' && operand !=='' && number2!=''){
         number1 = operator(number1, display.textContent, operand)
         display.textContent=''
         number2 = ''
@@ -110,8 +110,8 @@ function saveNumber(){
         operand = this.textContent
         display.textContent=''
     }
+    
     else {console.log('operand issue')}
-
     updateShortDis()
 }
 

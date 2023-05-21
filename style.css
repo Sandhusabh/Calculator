@@ -49,7 +49,7 @@ body {
     display: flex;
     border-radius: 20px;
     flex-direction: column;
-     gap: 10px;
+    gap: 10px;
 }
 .shortDisplay{
     display: flex;
@@ -60,7 +60,7 @@ body {
     font-family: monospace;
 }
 .mainDisplay{
-    flex: 1%;
+    flex: 1;
     font-size: 40px;
     display: flex;
     font-weight: bold;
@@ -68,6 +68,8 @@ body {
     flex-flow: row wrap ;
     align-items:flex-end;
     justify-content: end;
+    overflow:hidden;
+
 } 
 .buttons{
     background-color: #5d5c61;
