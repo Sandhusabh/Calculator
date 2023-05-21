@@ -101,6 +101,15 @@ function saveNumber(value){
     operand = value
     display.textContent=''
     }
+    if(number1===''  && operand ===''){
+        number1 = display.textContent 
+        operand = value
+        display.textContent=''
+        }
+    if(number1!==''  && operand !=='' && number2===''){
+              operand = value
+           
+            }    
     else if (number1!=='' && operand !=='' && number2!=''){
         number1 = operator(number1, display.textContent, operand)
         display.textContent=''
@@ -121,8 +130,10 @@ numButton.forEach((button)=>{
 button.addEventListener('click', ()=>{  runner(button.textContent)})})
  
 function runner (num){
-     console.log(num)
-    if ((number1 ==='' && operand ==='')|| (number1 ===undefined && operand ===undefined)){
+    if (operand!=='' && number1===''){
+        updateDisplay(num)
+    }
+    else if ((number1 ==='' && operand ==='')|| (number1 ===undefined && operand ===undefined)){
         let data = num
         updateDisplay(data)
     }
